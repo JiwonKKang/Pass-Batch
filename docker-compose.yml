@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    container_name: mysql_batch
+    image: mysql:8.0.30
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/initdb.d:/docker-entrypoint-initdb.d # 시작시 쿼리 설정
+    restart: always
+    ports:
+      - "3306:3306"
+    environment: # 환경 변수
+      - MYSQL_DATABASE=pass_local
+      - MYSQL_USER=pass_local_user
+      - MYSQL_PASSWORD=passlocal123
+      - MYSQL_ROOT_PASSWORD=passlocal123
+      - TZ=Asia/Seoul
+
