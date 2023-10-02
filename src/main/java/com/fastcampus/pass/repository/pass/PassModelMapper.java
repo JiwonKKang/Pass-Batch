@@ -12,7 +12,7 @@ public interface PassModelMapper {
     PassModelMapper INSTANCE = Mappers.getMapper(PassModelMapper.class);
 
     @Mapping(target = "status", qualifiedByName = "defaultStatus")
-    @Mapping(target = "remainingCount", qualifiedByName = "bulkPass.count")
+    @Mapping(target = "remainingCount", source = "bulkPass.count")
     Pass toPass(BulkPass bulkPass, String userId);
 
     @Named("defaultStatus")
