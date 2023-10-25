@@ -18,6 +18,7 @@ public class KakaoTalkMessageAdapter {
                     h.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
                 }).build();
 
+
     }
 
     public boolean sendKakaoTalkMessage(final String uuid, final String text) {
